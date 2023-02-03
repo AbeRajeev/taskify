@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import './App.css';
 import InputField from './components/InputField';
+import TodoList from './components/TodoList';
 import { Todo } from './models/models';
 
 const App: React.FC = () => {
@@ -16,17 +17,22 @@ const App: React.FC = () => {
     }
   };
 
+  //console.log(todos);
   
   return (
     <div className="App">
       <span className='heading'> Taskify </span>
       <InputField todo={todo} setTodo={setTodo} handleAdd={handleAdd}/>
+      <TodoList todos={todos} setTodos={setTodos}/>
       {/* <TodoList
           todos={todos}
           setTodos={setTodos}
           CompletedTodos={CompletedTodos}
           setCompletedTodos={setCompletedTodos}
         /> */}
+      {/* {todos.map((todo) => (
+          <span>{todo.todo}</span>
+      ))} */}
     </div>
   );
 }
