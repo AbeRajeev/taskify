@@ -1,6 +1,7 @@
 import React from 'react'
 import "./styles.css"
 import { Todo } from '../models/models'
+import SingleTodo from './SingleTodo';
 
 interface Props {
     todos: Todo[];
@@ -13,7 +14,7 @@ const TodoList: React.FC<Props> = ({todos, setTodos}) => {
     return (
         <div className='todoList'>
             {todos.map((todo) => (
-                <li> {todo.todo} </li>
+                <SingleTodo todo={todo} key={todo.id} todos={todos} setTodos={setTodos} />
             ))} 
         </div>
     )    
